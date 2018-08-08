@@ -22,12 +22,201 @@
 		</script>
 	</head>
 	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+        <div class="reveal">
+            <div class="slides">
+
+                <section class="center">
+                    <h1 class="center">Introdution to Vim</h1>
+                    <p class="fragment center">that one editor that you sometimes have to edit commit messages on</p>
+                </section>
+                
+                <section class="center">
+                    <section class="center">
+                        <h2 class="center">Vim is a "Modal" Editor</h2>
+                        <h4 class="fragment center">That means you have to press i to start writing stuff</h4>
+                        <br />
+                        <p class="fragment center" style="font-size: 0.5em">and using hjkl to move? what</p>
+                    </section>
+                </section>
+
+                <section class="center">
+                    <section class="center">
+                        <h3 class="center">So...</h3>
+                        <h3 class="fragment center">What do you do?</h3>
+                        <p class="fragment center">you enter insert and never leave</p>
+                    </section>
+                </section>
+
+                <section class="center">
+                    <section class="center">
+                        <h3 class="center">you spend 10 minutes trying it</h3>
+                        <h3 class="fragment center">and you never go back</h3>
+                    </section>
+                </section>
+                
+                <section class="center">
+                    <h3 class="center">this is exactly how you do not use vim</h3>
+                </section>
+
+                <section class="center">
+                    <h2 class="center">normal mode is where you stay most of the time</h2>
+                    <p class="fragment center">every key is available</p>
+                    <p class="fragment center">each key can represent a "word"</p>
+                    <p class="fragment center">"words" can be combined into sentences</p>
+                </section>
+
+                <section class="center">
+                    <h2 class="center">How does this work?</h2>
+                </section>
+
+                <section class="center">
+                    <h2 class="center">you just give it commands</h2>
+                    <h3 class="fragment center">like this</h3>
+                </section>
+
+                <section class="center">
+                    <h2 class="fragment center">[cdyv=]  [iatf]  [w{"pt)sB]</h2>
+                    <p class="fragment center">verbs motions objects (nouns)</p>
+                    <br />
+                    <h2 class="fragment center">easy</h2>
+                </section>
+                
+                <section class="center">
+                    <h2 class="fragment center">not really, but</h2>
+                </section>
+                
+                <section class="center">
+                    <h2 class="center">vim is a language</h2>
+                    <h2 class="fragment center">actions are verbs</h2>
+                    <br />
+                    <h2 class="fragment center">movements are nouns</h2>
+                </section>
+                
+                <section class="center">
+                    <h2 class="center">verbs</h2>
+                    <p class="fragment center">an action we take</p>
+                    <br />
+                    <div class="command-container">
+                        <p><span class="fragment"><strong>d</strong>: delete</span></p>
+                        <p><span class="fragment"><strong>c</strong>: change</span></p>
+                        <p><span class="fragment"><strong>y</strong>: yank</span></p>
+                        <p><span class="fragment"><strong>v</strong>: visually select</span></p>
+                    </div>
+                </section>
+                
+                <section class="center">
+                    <h2 class="center">modifiers</h2>
+                    <p class="fragment center">to be used before a noun to describe the way in which you're going to do something</p>
+                    <br />
+                    <div class="command-container">
+                        <p><span class="fragment"><strong>i</strong>: inside</span></p>
+                        <p><span class="fragment"><strong>a</strong>: around</span></p>
+                        <p><span class="fragment"><strong>NUM</strong>: number</span></p>
+                        <p><span class="fragment"><strong>t</strong>: search char and put the cursor before</span></p>
+                        <p><span class="fragment"><strong>f</strong>: search char and put the cursor ON it</span></p>
+                        <p><span class="fragment"><strong>/</strong>: find something (literal or regex)</span></p>
+                    </div>
+                </section>
+                
+                <section class="center">
+                    <h2 class="center">nouns</h2>
+                    <p class="fragment center">objects you do something to</p>
+                    <br />
+                    <div class="command-container">
+                        <p><span class="fragment"><strong>w</strong>: word</span></p>
+                        <p><span class="fragment"><strong>p</strong>: paragraph</span></p>
+                        <p><span class="fragment"><strong>}</strong>: paragraph (different way to do it)</span></p>
+                        <p><span class="fragment"><strong>t</strong>: tag (think html)</span></p>
+                        <p><span class="fragment"><strong>b</strong>: block</span></p>
+                    </div>
+                </section>
+                
+                <section class="center">
+                    <h2 class="center">building sentences in this language?</h2>
+                    <br />
+                    <div class="command-container">
+                        <p><span class="fragment"><strong>d2w</strong>: delete two words</span></p>
+                        <p><span class="fragment"><strong>ct<</strong>: change until <</span></p>
+                        <p><span class="fragment"><strong>cit</strong>: change inside tag</span></p>
+                        <p><span class="fragment"><strong>yi"</strong>: yank inside "</span></p>
+                    </div>
+                </section>
+
+                <section class="center">
+                    <h2 class="center">moving around?</h2>
+                    <p class="fragment center">hjkl (or arrows) are (almost) useless</p>
+                    <p class="fragment center">there's usually a better way</p>
+                </section>
+                
+                <section class="center">
+                    <h2 class="center">moving in a line</h2>
+                    <div class="command-container">
+                        <p><span class="fragment"><strong>0</strong>: beginning of line</span></p>
+                        <p><span class="fragment"><strong>$</strong>: end of line</span></p>
+                        <p><span class="fragment"><strong>^</strong>: first non blank character in line</span></p>
+                        <p><span class="fragment"><strong>t"</strong>: jump to position just before next "</span></p>
+                        <p><span class="fragment"><strong>f"</strong>: jump to position of next "</span></p>
+                    </div>
+                </section>
+                
+                <section class="center">
+                    <h2 class="center">moving by words</h2>
+                    <div class="command-container">
+                        <p><span class="fragment"><strong>w</strong>: next word word</span></p>
+                        <p><span class="fragment"><strong>b</strong>: back one word</span></p>
+                        <p><span class="fragment"><strong>e</strong>: end of word</span></p>
+                    </div>
+                    <p class="fragment center">uppercase variations ignore normal word delimiters (but space)</p>
+                </section>
+                
+                <section class="center">
+                    <h2 class="center">some other movements</h2>
+                    <div class="command-container">
+                        <p><span class="fragment"><strong>ctrl-u</strong>: go up half a page</span></p>
+                        <p><span class="fragment"><strong>ctrl-d</strong>: go down half a page</span></p>
+                        <p><span class="fragment"><strong>ctrl-i</strong>: jump to your previous navigation location</span></p>
+                        <p><span class="fragment"><strong>ctrl-o</strong>: jump to where you were</span></p>
+                        <p><span class="fragment"><strong>gg</strong>: beginning of file</span></p>
+                        <p><span class="fragment"><strong>G</strong>: end of file</span></p>
+                    </div>
+                </section>
+                
+                <section class="center">
+                    <h2 class="center">"rule of thumb"</h2>
+                    <p class="fragment center">if you're mashing something several times, there's probably a better way</p>
+                </section>
+                
+                <section class="center">
+                    <h2 class="center">the . command</h2>
+                    <p class="center">repeats the last command</p>
+                </section>
+                
+                <section class="center">
+                    <h2 class="center">ex commands</h2>
+                    <p class="fragment center">:s/PATTERN/SUBSTITUTION/g</p>
+                    <p class="fragment center">:g/PATTERN/command</p>
+                    <p class="fragment center">:v/PATTERN/command</p>
+                </section>
+                
+                <section class="center">
+                    <h2 class="center">macros</h2>
+                    <p class="fragment center">when you try to quit vim and you miss ":" and it says "start recording" on the bottom</p>
+                    <p class="fragment center">with available commands, vim's macros are awesome</p>
+                    <p class="fragment center">start recording with qX</p>
+                    <p class="fragment center">stop it with just q</p>
+                    <p class="fragment center">execute it with @X</p>
+                </section>
+                
+                <section class="center">
+                    <h2 class="center">demo time!</h2>
+                </section>
+                
+                <section class="center">
+                    <h2 class="center">questions?</h2>
+                </section>
+                
+            </div>
+        </div>
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
